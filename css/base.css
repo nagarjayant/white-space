@@ -113,6 +113,9 @@ header {
 .highlight-space {
   background-color: red;
   cursor: pointer;
+  width: 10px;
+  border-radius: 10px;
+  display: inline-block;
 }
 .highlight-badchar {
   background-color: pink;
