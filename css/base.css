@@ -1,0 +1,262 @@
+/*
+  ver:1.0
+*/
+
+/* ------------------------------------------------------------ *\
+    Fonts
+\* ------------------------------------------------------------ */
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+/* ------------------------------------------------------------ *\
+    Base Css
+\* ------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  outline: 0 none;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+}
+
+*:focus {
+  outline: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  gap: 50px;
+}
+
+header {
+  width: 100%;
+  float: left;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+  background: #fff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  height: 50px;
+}
+
+.headerLogo {
+  width: 100px;
+  float: left;
+}
+
+.headerLogo img {
+  max-width: 50px;
+}
+
+.headerText {
+  width: auto;
+  float: right;
+  font-size: 14px;
+  color: #000;
+  font-weight: bold;
+}
+
+.center-area {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.flexDiv {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+  margin-top: 30px;
+}
+.column {
+  width: 100%;
+  height: 100%;
+  float: left;
+  border-radius: 10px;
+  border: 1px solid #000;
+  position: relative;
+}
+#inputArea {
+  width: 100%;
+  height: 100%;
+  font-family: monospace;
+  resize: none;
+  padding: 0;
+  border: none;
+  outline: none;
+  padding: 20px;
+  border-radius: 10px;
+}
+#outputArea {
+  white-space: pre-wrap;
+  background: #f4f4f4;
+  overflow-y: auto;
+  padding: 20px;
+  position: relative;
+  border-radius: 10px;
+  height: 100%;
+}
+.highlight-space {
+  background-color: red;
+  cursor: pointer;
+}
+.highlight-badchar {
+  background-color: pink;
+  cursor: pointer;
+}
+
+.spaceSelected {
+  background-color: green;
+  cursor: pointer;
+}
+
+.outputText {
+  width: 100%;
+  float: left;
+  padding: 0;
+  color: rgb(122, 122, 122);
+  position: absolute;
+  inset: 20px;
+}
+
+.selectedSpaces {
+  width: 100%;
+  float: left;
+  padding: 10px 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px;
+  height: 80px;
+  margin-top: -30px;
+}
+
+#selectedSCount {
+  width: auto;
+  font-size: 12px;
+  color: #000;
+  font-weight: bold;
+}
+
+.remButton {
+  width: auto;
+  min-width: 145px;
+  background: #000;
+  border: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 450;
+  line-height: 24px;
+  position: relative;
+  cursor: pointer;
+  padding: 10px 20px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: bold;
+  display: none;
+}
+.remButton:hover::after {
+  content: "";
+  position: absolute;
+  border: 2px solid #000;
+  border-radius: 100px;
+  inset: -1px;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.95, 1);
+  transition-duration: 0.15s;
+}
+
+.remButton:active::after {
+  content: "";
+  position: absolute;
+  border: 1px solid #000;
+  border-radius: 100px;
+  inset: -4px;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.95, 1);
+  transition-duration: 0.15s;
+}
+
+.copyContent {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 30px;
+  height: 30px;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: none;
+}
+
+.copyContent img {
+  max-width: 100%;
+  opacity: 0.2;
+}
+
+.tooltip-text {
+  visibility: hidden;
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  white-space: nowrap;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.copyContent:hover .tooltip-text,
+.copyContent:hover img {
+  visibility: visible;
+  opacity: 1;
+}
+
+#alertBox {
+  width: 100%;
+  max-width: 300px;
+  padding: 10px;
+  border-radius: 10px;
+  background: #191919;
+  font-weight: 450;
+  font-size: 12px;
+  line-height: 16px;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: none;
+}
+
+footer {
+  width: 100%;
+  float: left;
+  height: 80px;
+  display: flex;
+  background: #000;
+  align-items: center;
+  justify-content: center;
+}
+
+footer img {
+  max-width: 100px;
+}

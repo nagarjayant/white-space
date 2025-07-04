@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>White space Highlighter</title>
+    <link rel="stylesheet" href="css/base.css" />
+  </head>
+  <body>
+    <header>
+      <div class="center-area">
+        <div class="headerLogo">
+          <img src="images/ibm_logo.svg" alt="Logo" />
+        </div>
+        <div class="headerText">DMO White Space Highlighter</div>
+      </div>
+    </header>
+    <div class="center-area">
+      <div class="selectedSpaces">
+        <span id="selectedCount"></span>
+        <button class="remButton">Remove selected</button>
+      </div>
+      <div class="flexDiv">
+        <div class="column">
+          <textarea id="inputArea" placeholder="Enter HTML here..."></textarea>
+        </div>
+        <div class="column">
+          <div id="outputArea">
+            <span class="outputText">Output here...</span>
+          </div>
+
+          <button class="copyContent">
+            <img src="images/copyContent.png" />
+            <span class="tooltip-text">Copy</span>
+          </button>
+          <div id="alertBox">Content Copied!</div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <img src="images/ibm-logo-white.png" alt="Logo" />
+    </footer>
+    <script src="scripts/main.js"></script>
+  </body>
+</html>
