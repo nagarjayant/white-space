@@ -25,7 +25,7 @@ inputArea.addEventListener("input", () => {
     copyContent.style.display = "block";
   } else {
     copyContent.style.display = "none";
-    outputArea.innerHTML = '<span class="outputText">Output here...</span>';
+    outputArea.innerHTML = '<span class="outputText">Cleaned code output</span>';
   }
 });
 
